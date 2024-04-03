@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Mon Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="presentation">
+    <h2>Qui suis-je ?</h2>
+      <p> Actuellement en But infomatique à Nantes je suis à la recherche d'une alternance pour septembre 2024
+          Je suis un développeur informatique passionné, avec une expérience dans le developpement d'applications et le backend.</p>
+  </section>
+  <section id="projets">
+    <h2>Mes Projets</h2>
+      {% for item in articles %}
+        <div class="projet">
+          <h3>{{ item.title }}</h3>
+            <p>{{ item.tags }}</p>
+          <p>{{ item.content|linebreaks }}</p>
+          <a href={{ item.lien }}>Lien vers le code source</a>
+        </div>
+      {% endfor %}
+  </section>
+  <section id="contact">
+    <h2>Contactez-moi</h2>
+    <p>N'hésitez pas à me contacter pour plus d'informations ou pour discuter de futurs projets.</p>
+    <a href="mailto:votre-email@exemple.com">votre-email@exemple.com</a>
+  </section>
+  <footer>
+    <p>&copy; 2024 Mon Portfolio</p>
+  </footer>
+</body>
+</html>
