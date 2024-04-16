@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    #'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-    "default": {
-        "ENGINE": "django.db.backends.oracle",
-        "NAME": "localhost:1521/XE",
-        "USER": "portfolio",
-        "PASSWORD": str(os.getenv("PW")),
-        'HOST': '',
-        'PORT': '',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    #"default": {
+    #    "ENGINE": "django.db.backends.oracle",
+    #    "NAME": "localhost:1521/XE",
+    #    "USER": "portfolio",
+    #    "PASSWORD": "49054905",
+    #    'HOST': '',
+    #    'PORT': '',
+    #}
 }
 
 

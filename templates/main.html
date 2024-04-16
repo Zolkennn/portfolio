@@ -1,4 +1,5 @@
 {% load static %}
+{% load poll_extras %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,11 @@
       {% for item in articles %}
         <div class="projet">
           <h3>{{ item.title }}</h3>
-            <p>{{ item.tags }}</p>
+            <ul class="tags">
+            {% for tag in item.tags_set.all %}
+                <li><a href="#">{{ tag.tags }}</a></li>
+            {% endfor %}
+            </ul>
           <p>{{ item.content|linebreaks }}</p>
           <a href={{ item.lien }}>Lien vers le code source</a>
         </div>
